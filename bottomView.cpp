@@ -52,7 +52,7 @@ map<int,int> bottomViewUtil(struct node *root, int level)
 void bottomView(struct node *root)
 {
 	
-	map<int,int> p=leftViewUtil(root, 1);
+	map<int,int> p=bottomViewUtil(root, 1);
 	map<int ,int> :: iterator ir;
 	for( ir=p.begin();ir!=p.end();ir++){
 	    cout<< ir->second<< " ";
