@@ -72,7 +72,7 @@ void print_left(Node *root,int level,map<int,int> &m){
         m[level]=root->data;
         cout <<root->data<< " ";
     }
-    print_left(root->left,level-1,m);
+    print_left(root->left,level+1,m);
     print_left(root->right,level+1,m);
     
 }
