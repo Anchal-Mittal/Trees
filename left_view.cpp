@@ -10,8 +10,7 @@ struct Node
 };
 // A wrapper over leftViewUtil()
 void leftView(struct Node *root);
-/* Helper function that allocates a new node with the
-   given data and NULL left and right pointers. */
+
 struct Node* newNode(int data)
 {
   struct Node* node = (struct Node*)
@@ -65,17 +64,7 @@ int main()
 
 }
 
-/*Please note that it's Function problem i.e.
-you need to write your solution in the form of Function(s) only.
-Driver Code to call/invoke your function is mentioned above.*/
 
-/* A binary tree node
-struct Node
-{
-    int data;
-    Node* left, * right;
-}; */
-// A wrapper over leftViewUtil()
 void print_left(Node *root,int level,map<int,int> &m){
     if(root==NULL)
         return;
@@ -83,7 +72,7 @@ void print_left(Node *root,int level,map<int,int> &m){
         m[level]=root->data;
         cout <<root->data<< " ";
     }
-    print_left(root->left,level+1,m);
+    print_left(root->left,level-1,m);
     print_left(root->right,level+1,m);
     
 }
@@ -93,5 +82,5 @@ void leftView(Node *root)
     int level=0;
     map<int,int> m;
     print_left(root,level,m);
-   // Your code here
+   
 }
